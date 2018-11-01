@@ -24,5 +24,4 @@ $(document).ready(function(){
     localStorage.clear();
     $(".show-text").empty();
   });
-
 });
