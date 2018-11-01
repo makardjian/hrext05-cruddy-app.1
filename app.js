@@ -20,39 +20,39 @@ $(document).ready(function(){
   }
 
 
-
-
   // add an item to the list
-/*
-    Strategy:
-      /if the inputText.value.length is > 0:
-        -Concatenate a new List element together 
-        -appnd the new list item to 'list' which is equal to the ul div.
-        -put the new list item into localStorage
-        -
-
-    */
-
   addItem.addEventListener('click',function(e){
     if (inputText.value.length > 0) {
-      var currentItem = new Grocery(inputText.value)
-      localStorage.setItem(storageKey, currentItem.groceryName)
+      var currentItem = new Grocery(inputText.value);
+      console.log(currentItem)
+      localStorage.setItem(storageKey, JSON.stringify(currentItem));
       list.innerHTML += '<li>' + inputText.value + '</li>';
       inputText.value = '';
-      storageKey++
-      console.log(localStorage)
-      // console.log(currentItem)
+      storageKey++;
+      // console.log(window.localStorage)  //for some reason my local storage values aren't printing to console??
+    } else {
+      alert('Add something to your Grocery List!')
     }
-
-
   });
 
-  // remove item from app
 
-  // listen for click event (del)
-  $(".clear-cache-btn").on("click", function(){
-    // clear local storage
-    localStorage.clear();
-    $(".show-text").empty();
+  //check a grocery off the list
+  list.addEventListener('click', function(e) {
+    var clickedItem = event.target;
+    $(clickedItem).addClass('complete')
+    console.log(event.target)
+  })
+
+
+
+  // remove checked items from the list
+  clearBtn.addEventListener('click', function() {
+    $('.complete').remove();
   });
+
+  //edit items on the list:
+
+
 });
+
+
