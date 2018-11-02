@@ -1,5 +1,9 @@
+body {
+  background: #EFE2BA
+}
+
 .container {
-  background: white;
+  background: #EFE2BA;
   max-width: 600px;
   width: 100%;
   display: table;
@@ -9,21 +13,23 @@
 
 
 h1 {
-  color: SteelBlue;
+  color: #4056A1;
   font-family: 'Lora', serif;
   font-size: 45px;
   text-align: center;
   padding-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1;
-  margin-left: 450px;
+  margin-left: 470px;
+  font-weight: bold;
 }
 
 
 #buttons {
   display: flex;
   justify-content: center;
-  margin-right: 70px
+  margin-right: 25px;
+  margin-bottom: 5px;
 }
 
 
@@ -39,23 +45,24 @@ h1 {
 
 
 .text-input {
-  background: AliceBlue;
+  background: #EFE2BA;
   color: DimGrey;
   border: none;
   display: block;
-  width: 95%;
-  line-height: 3.5;
-  padding: 8px 0 8px 10px;
+  width: 50%;
+  line-height: 3;
   border-bottom: 1px solid silver;
   outline:0;
   font-size: 20px;
   text-align: center;
+  margin-left: 340px;
 }
 
 
 li {
     color: DimGrey;
     font-weight: 400;
+    font-family: 'Lora', serif;
     border-bottom: 1px solid silver;
     line-height: 1.5;
     padding: 8px 0;
@@ -69,9 +76,10 @@ li {
 }
 
 #image {
-  width: 100px;
-  height: 100px;
-  margin-right: 450px;
+  width: 90px;
+  height: 90px;
+  margin-right: 395px;
+  margin-top: 5px;
 }
 
 #buffer {
