@@ -16,12 +16,14 @@ h1 {
   padding-top: 30px;
   margin-bottom: 20px;
   line-height: 1;
+  margin-left: 450px;
 }
 
 
 #buttons {
   display: flex;
   justify-content: center;
+  margin-right: 70px
 }
 
 
@@ -32,7 +34,7 @@ h1 {
   border-width: 2px;
   border-color: #664400;
   height: 30px;
-  margin: 10px;
+  margin: 15px;
 }
 
 
@@ -66,5 +68,15 @@ li {
   text-decoration: line-through;
 }
 
+#image {
+  width: 100px;
+  height: 100px;
+  margin-right: 450px;
+}
+
+#buffer {
+  width: 100%;
+  height: 10px;
+}
 
 
