@@ -1,0 +1,70 @@
+.container {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+
+h1 {
+  color: SteelBlue;
+  font-family: 'Lora', serif;
+  font-size: 45px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+.add-item-btn, .clear-checked-btn, .update-item-btn {
+  background-color: #e0876a;
+  font-weight: bold;
+  color: linen;
+  border-width: 2px;
+  border-color: #664400;
+  height: 30px;
+  margin: 10px;
+}
+
+
+.text-input {
+  background: AliceBlue;
+  color: DimGrey;
+  border: none;
+  display: block;
+  width: 95%;
+  line-height: 3.5;
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px solid silver;
+  outline:0;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+li {
+    color: DimGrey;
+    font-weight: 400;
+    border-bottom: 1px solid silver;
+    line-height: 1.5;
+    padding: 8px 0;
+}
+
+
+.complete {
+  color: #cc2900;
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+
+
