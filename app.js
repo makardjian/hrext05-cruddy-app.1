@@ -1,6 +1,5 @@
 
 
-//NEED TO FIGURE OUT HOW TO KEEP GROCERY ITEMS ON THE PAGE WHEN THE PAGE RELOADS
 
 
 $(document).ready(function(){
@@ -14,12 +13,23 @@ $(document).ready(function(){
   var storageKey = 0
   var storageKeysForRemoval =[];
 
-  //functions
-  var Grocery = function(groceryName) {
-    this.groceryName = groceryName;
-    this.createdAt = new Date();
-    this.complete = false;
-  }
+  //helper functions
+    //generate new grocery object
+    var Grocery = function(groceryName) {
+      this.groceryName = groceryName;
+      this.createdAt = new Date();
+      this.complete = false;
+    }
+
+     //load items from local storage on page reload
+    var propertiesNotToLoad = ['length', 'key', 'getItem', 'setItem', 'removeItem', 'clear']
+    var loadStorage = function() {
+      for (var key in window.localStorage) {
+        if ( key !== 'length' && key !== 'key' && key !== 'getItem' && key !== 'setItem' && key !== 'removeItem' && key !== 'clear') {
+          list.innerHTML += '<li id= ' + key + '>' + key + '</li>';
+       }
+      }
+    }
 
 
   // add an item to the list
@@ -27,8 +37,8 @@ $(document).ready(function(){
     if (inputText.value.length > 0) {
       var currentItem = new Grocery(inputText.value);
       // console.log(currentItem)
-      localStorage.setItem(storageKey, JSON.stringify(currentItem));
-      list.innerHTML += '<li>' + inputText.value + '</li>';
+      localStorage.setItem(inputText.value, JSON.stringify(currentItem));
+      list.innerHTML += '<li id= ' + inputText.value + '>' + inputText.value + '</li>';
       inputText.value = '';
       storageKey++;
       // console.log(window.localStorage)  //for some reason my local storage values aren't printing to console??
@@ -58,7 +68,7 @@ $(document).ready(function(){
     $(clickedItem).addClass('complete');
     storageKeysForRemoval.push(e.target.id);
 
-    console.log(storageKeysForRemoval);
+    // console.log(storageKeysForRemoval);
 
   });
 
@@ -66,14 +76,15 @@ $(document).ready(function(){
   // remove checked items from the list
   clearBtn.addEventListener('click', function() {
     $('.complete').remove();
-
     for (var i = 0; i < storageKeysForRemoval.length; i++) {
       localStorage.removeItem(storageKeysForRemoval[i])
     }
-
     storageKeysForRemoval = [];
-    console.log(storageKeysForRemoval)
   });
+
+
+  //invoke loadStorage function on page load
+  loadStorage();
 
 
 
